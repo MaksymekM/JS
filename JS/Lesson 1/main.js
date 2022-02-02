@@ -34,8 +34,12 @@ document.write (i);
 //let lastName = 'Malgiwski';
 //console.log(lastName)
 
-let me = {firstName: 'Maksym', middleName: 'V', lastName: 'Malgiwski', age: 27};
-console.log ('Вітаю', me.firstName, me.middleName, 'тобі', me.age, 'років')
+let prname = prompt('What is your Name?',);
+let prlstname = prompt('What is your Middle Name?',);
+let prlsage = prompt('How old are you?',);
+
+alert(`Вітаю ${prname} ${prlstname} Тобі  ${prlsage} років`);
+
 
 let aa = 100;
 let bb = '100';
