@@ -7,7 +7,7 @@
 
 
 
-//let day = prompt('please enter the day');
+//let day = + prompt('please enter the day');
 //if (day <=10) {console.log (`First`);}
 //else if (day >10 && day <=20) {console.log (`Second`)}
 //else if (day >20 && day <=31) {console.log (`Third`)}
@@ -21,11 +21,11 @@
 //let test = confirm(`true or false?`,'') ? 'true' : 'false';
 //console.log (test)
 
-//let a = prompt (`please input the number`);
-//if (a == 0) {console.log(`correct`)}
+//let a = +prompt (`please input the number`);
+//if (a === 0) {console.log(`correct`)}
 //else {console.log (`incorrect`)}
 
-let scq = prompt('please ented week #');
+let scq = +prompt('please enter week #');
 document.write('<ul>')
 switch (scq) {
 

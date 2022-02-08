@@ -9,14 +9,14 @@
 //else if (frst===scnd) {console.log('Numbers are the same')}
 //else {console.log ('EROR')}
 
-//let flat = prompt('Пліз ентер номер квартири');
+//let flat = +prompt('Пліз ентер номер квартири');
 // if (flat >=1 && flat <21) {document.write('This flat is in the 1st підїзді')}
 // else if (flat>=21 &&flat<49) {document.write('This flat is in the 2nd підїзді')}
 // else if (flat>=49 && flat <91) {document.write('This flat is in the 3rd підїзді')}
 // else {document.write('Васильок, або такої квартири немає в цьому будинку, або ти ввів якусь біліберду')}
 
 
-//let number = prompt('please enter 10');
+//let number = +prompt('please enter 10');
 // if (number === '10') {alert ('YES IT IS TEN')}
 // else {alert('THIS IS NOT 10!!')}
 
@@ -24,7 +24,7 @@
 // Змінна, яка характеризує температуру. Якщо температура від +10 до +22 вивести повідомлення що ми йдемо ВЧИТИСЯ .
 // Якщо інша темпаретура, тоді виводимо повідомлення що сидимо вдома і вчимося ОНЛАЙН
 
-//let qstn = prompt('Яка сьгодні температура?');
+//let qstn = +prompt('Яка сьгодні температура?');
 //if (qstn >=10 && qstn <=22) {document.write ('ми йдемо ВЧИТИСЯ')}
 //else {document.write('сидимо вдома і вчимося ОНЛАЙН')}
 
