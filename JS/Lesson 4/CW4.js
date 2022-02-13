@@ -103,16 +103,7 @@
 
 // - створити функцію яка заповнює масив рандомними числами в діапазоні від 0 до limit. limit - аргумент,
 // який характеризує кінцеве значення діапазону.
-//function rndm (limit) {
-//     let ar = [];
-//     for (let i = 0; i < limit; i++) {
-//         ar.push (Math.floor(Math.random()*100));
-//     }
-//     console.log(ar)
-//     return ar;
-//
-// }
-// rndm (10)
+
 
 
 
