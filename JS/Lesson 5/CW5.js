@@ -28,17 +28,19 @@
 // }
 // largestNum(5,7,24235)
 // - створити функцію яка повертає найбільше число з масиву
-//let msv = [11,2,3,4,5,6,7,8,9];
-//   let lrgstNum = (x) => {
-//        let max = x[0];
-//        for (const element of x) {
-//            if (element > max) {
-//                max = element;
-//            }
-//       }
-//      console.log(max);
-//   }
-//   lrgstNum(msv)
+let msv = [11,2,3,4,5,6,7,8,9];
+   let lrgstNum = (x) => {
+        let max = x[0];
+        for (const element of x) {
+            if (element > max) {
+                max = element;
+            }
+       }
+        return max
+    // console.log(max);
+   }
+   //lrgstNum(msv)
+  console.log(lrgstNum(msv))
 
 // - створити функцію яка повертає найменьше число з масиву
 //let msv = [11,2,3,4,5,6,7,8,9];
@@ -124,12 +126,12 @@
 // anyMsv (5,10)
 
 // - Функція приймає масив та робить з нього новий масив в зворотньому порядку. [1,2,3] -> [3, 2, 1].
-let msv = [11,2,3,4,5,6,7,8,9]
-    let reverse = (y) => {
-    let i = y.length-1;
-    while (i>=0) {
-        document.write(`<div>${y[i]}</div>`);
-        i--
-    }
-}
-reverse (msv)
+//let msv = [11,2,3,4,5,6,7,8,9]
+     let reverse = (y) => {
+     let i = y.length-1;
+     while (i>=0) {
+         document.write(`<div>${y[i]}</div>`);
+         i--
+     }
+ }
+ reverse (msv)
