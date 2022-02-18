@@ -120,7 +120,7 @@ let prince = new Prince('John', 19, 35);
 // За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 let = newMatch = (popeliushkas, prince) => {
     for (const popeliushka of popeliushkas) {
-        if (popeliushka.sizeOfShoe = prince.sizeOfShoe) {
+        if (popeliushka.sizeOfShoe === prince.sizeOfShoe) {
             return `Hey ${prince.name}, your popeliushka is ${popeliushka.name}`
         }
     }
