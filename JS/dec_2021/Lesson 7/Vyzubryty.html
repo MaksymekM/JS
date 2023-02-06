@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VyzubrytyJS</title>
+</head>
+<body>
+<script>
+
+     function userCreator(name, age) {
+         let obj = {name: name, age: age}
+         let newVar = { // manipulator
+             getName: function () {
+                 return obj.name
+             },
+             getAge: function () {
+                 return obj.age;
+             },
+             setAge: function (age) {
+                 if (age < 0 || age < obj.age) {
+                     alert('!!!!!!!!')
+                 } else {
+                     obj.age = age;
+
+                 }
+             },
+         };
+         return newVar;
+     }
+          let manipulator = userCreator('kokos', 31);
+          console.log(manipulator);
+          console.log(manipulator.getName());
+          console.log(manipulator.getAge());
+          manipulator.setAge(32);
+          console.log(manipulator.getAge());
+
+
+</script>
+
+</body>
+</html>

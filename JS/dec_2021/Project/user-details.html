@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Details</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+<div class="userDetails"></div>
+
+</body>
+<script>
+let url = new URL(location.href);
+let user = JSON.stringify(url.searchParams.get('data'));
+console.log(user)
+function userInfo (point) {
+    for (let pointElement of point) {
+        if (typeof  point[pointElement] !== 'object') {
+            let pointContainer = document.createElement('div');
+            pointContainer.innerText = point[pointElement];
+            pointContainer.classList.add('pointCnt');
+            document.body.appendChild(pointContainer);
+        }
+        else if (typeof point[pointKey]==='object') {
+            userInfo(point[pointElement])
+        }
+    }
+}
+userInfo(user)
+</script>
+</html>
