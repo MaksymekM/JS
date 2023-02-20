@@ -89,9 +89,8 @@ console.log(spad);
 //      }
 //      return coursesAndDurationArray;
 //  }
-
-console.log(sortdesc(coursesAndDurationArray));
-console.log(coursesAndDurationArray);
+//console.log(sortdesc(coursesAndDurationArray));
+//console.log(coursesAndDurationArray);
 
 //  -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
 let filter = coursesAndDurationArray.filter(xyz=>xyz.monthDuration>5);
@@ -116,13 +115,62 @@ let map = coursesAndDurationArray.map((aa,index) => {
 console.log(map);
 //  =========================
 //  описати колоду карт (від 6 до туза без джокерів)
-
+let cards = [
+    { cardSuit: 'spade', value: '6', color: 'black' },
+    { cardSuit: 'spade', value: '7', color: 'black' },
+    { cardSuit: 'spade', value: '8', color: 'black' },
+    { cardSuit: 'spade', value: '9', color: 'black' },
+    { cardSuit: 'spade', value: '10', color: 'black' },
+    { cardSuit: 'spade', value: 'jack', color: 'black' },
+    { cardSuit: 'spade', value: 'queen', color: 'black' },
+    { cardSuit: 'spade', value: 'king', color: 'black' },
+    { cardSuit: 'spade', value: 'ace', color: 'black' },
+    { cardSuit: 'clubs', value: '6', color: 'black' },
+    { cardSuit: 'clubs', value: '7', color: 'black' },
+    { cardSuit: 'clubs', value: '8', color: 'black' },
+    { cardSuit: 'clubs', value: '9', color: 'black' },
+    { cardSuit: 'clubs', value: '10', color: 'black' },
+    { cardSuit: 'clubs', value: 'jack', color: 'black' },
+    { cardSuit: 'clubs', value: 'queen', color: 'black' },
+    { cardSuit: 'clubs', value: 'king', color: 'black' },
+    { cardSuit: 'clubs', value: 'ace', color: 'black' },
+    { cardSuit: 'diamond', value: '6', color: 'red' },
+    { cardSuit: 'diamond', value: '7', color: 'red' },
+    { cardSuit: 'diamond', value: '8', color: 'red' },
+    { cardSuit: 'diamond', value: '9', color: 'red' },
+    { cardSuit: 'diamond', value: '10', color: 'red' },
+    { cardSuit: 'diamond', value: 'jack', color: 'red' },
+    { cardSuit: 'diamond', value: 'queen', color: 'red' },
+    { cardSuit: 'diamond', value: 'king', color: 'red' },
+    { cardSuit: 'diamond', value: 'ace', color: 'red' },
+    { cardSuit: 'heart', value: '6', color: 'red' },
+    { cardSuit: 'heart', value: '7', color: 'red' },
+    { cardSuit: 'heart', value: '8', color: 'red' },
+    { cardSuit: 'heart', value: '9', color: 'red' },
+    { cardSuit: 'heart', value: '10', color: 'red' },
+    { cardSuit: 'heart', value: 'jack', color: 'red' },
+    { cardSuit: 'heart', value: 'queen', color: 'red' },
+    { cardSuit: 'heart', value: 'king', color: 'red' },
+    { cardSuit: 'heart', value: 'ace', color: 'red' },
+];
 //  - знайти піковий туз
+let filterForAce = cards.filter(card=>card.value==='ace'&& card.cardSuit==='spade');
+console.log(filterForAce);
 //  - всі шістки
+let filterForSix = cards.filter(card=>card.value==='6');
+console.log(filterForSix);
 //  - всі червоні карти
+let filterForRed = cards.filter(card=>card.color==='red');
+console.log(filterForRed);
 //  - всі буби
+let filterForDiamond = cards.filter(card=>card.cardSuit==='diamond');
+console.log(filterForDiamond);
 //  - всі трефи від 9 та більше
-//
+let filterForClubs = cards.filter(card=>card.cardSuit ==='clubs' &&
+    card.value != '6' && card.value != '7' && card.value !='8'
+);
+ console.log(filterForClubs);
+
 // {
 //     cardSuit: '', // 'spade', 'diamond','heart', 'clubs'
 //     value: '', // '6'-'10', 'ace','jack','queen','king','joker'
@@ -138,7 +186,102 @@ console.log(map);
 //     hearts:[],
 //     clubs:[]
 // }
+console.log(cards.reduce((acumulator, value)=>{
+        if (value.cardSuit === 'spade') {
+            acumulator.spades.push(value);
+        } else if (value.cardSuit === 'diamond') {
+            acumulator.diamonds.push(value);
+        } else if (value.cardSuit === 'heart') {
+            acumulator.hearts.push(value);
+        } else if (value.cardSuit === 'clubs') {
+            acumulator.clubs.push(value);
+        }
+        return acumulator;
+    } ,{spades:[],diamonds:[],hearts:[],clubs:[]
+    }));
+
 // =========================
 // взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
+let coursesArray = [
+    {
+        title: 'JavaScript Complex',
+        monthDuration: 5,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+    },
+    {
+        title: 'Java Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'java core',
+            'java advanced']
+    },
+    {
+        title: 'Python Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'python core',
+            'python advanced']
+    },
+    {
+        title: 'QA Complex',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+    },
+    {
+        title: 'FullStack',
+        monthDuration: 7,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'node.js',
+            'python',
+            'java']
+    },
+    {
+        title: 'Frontend',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+    }
+];
 // --написати пошук всіх об'єктів, в який в modules є sass
+    console.log(
+        coursesArray.reduce((accumulator, courses)=> {
+            for (let i = 0; i < courses.length; i++) {
+                let coursesElement = courses[i];
+                let modls = coursesElement.modules;
+                if (modls.includes('sass')=== true){
+                    accumulator.push(coursesElement);
+                }
+            } return accumulator
+        },[])
+
+        );
 // --написати пошук всіх об'єктів, в який в modules є docker
