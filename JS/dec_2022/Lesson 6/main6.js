@@ -282,6 +282,5 @@ let coursesArray = [
                 }
             } return accumulator
         },[])
-
         );
 // --написати пошук всіх об'єктів, в який в modules є docker
