@@ -23,6 +23,7 @@ higher('hello world');
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
 let str = ' dirty string   ';
 console.log(str.replaceAll(' ',''));
+console.log(str.trim());
 // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
      let str2 = 'Ревуть воли як ясла повні'; //-> ['Ревуть', 'воли', 'як', 'ясла', 'повні']
     console.log(str2.split(' '));
@@ -44,7 +45,7 @@ function sort(nmbs,direction){
         if (direction === 'ascending') {
             for (let nmb of nmbs) {
                 if (nmb < thisnum){
-                    rslt.unshift(nmb);
+                    rslt.unshift (nmb);
                 } else {rslt.push(nmb)}
             }return rslt
     }else if (direction === 'descending') {
@@ -273,14 +274,20 @@ let coursesArray = [
 ];
 // --написати пошук всіх об'єктів, в який в modules є sass
     console.log(
-        coursesArray.reduce((accumulator, courses)=> {
-            for (let i = 0; i < courses.length; i++) {
-                let coursesElement = courses[i];
-                let modls = coursesElement.modules;
-                if (modls.includes('sass')=== true){
-                    accumulator.push(coursesElement);
-                }
-            } return accumulator
-        },[])
+        coursesArray.filter(courses=>courses.modules.includes('sass'))
+
+
         );
+//  coursesArray.reduce((accumulator, courses)=> {
+//      for (let i = 0; i < courses.length; i++) {
+//          let coursesElement = courses[i];
+//          let modls = coursesElement.modules;
+//          if (modls.includes('sass')=== true){
+//              accumulator.push(coursesElement);
+//          }
+//      } return accumulator
+//  },[])
 // --написати пошук всіх об'єктів, в який в modules є docker
+console.log(
+    coursesArray.filter(courses=>courses.modules.includes('docker'))
+);
