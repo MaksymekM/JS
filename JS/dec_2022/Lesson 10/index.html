@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <style>
+        .wrapper {
+            width: 300px;
+            padding: 10px;
+        }
+        .item {
+            margin-top: 10px;
+            border: #ecec37 3px solid;
+        }
+    </style>
+</head>
+<body>
+<h1>INDEX</h1>
+<script>
+    const json = localStorage.getItem('sessions');
+    const sessions = json ? JSON.parse(json) : [];
+
+    sessions.push({
+        date: new Date().toISOString(),
+
+
+    });
+    localStorage.setItem('sessions', JSON.stringify(sessions));
+
+</script>
+</body>
+</html>

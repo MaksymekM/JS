@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sessions</title>
+    <style>
+        .wrapper {
+            width: 300px;
+            padding: 10px;
+        }
+        .item {
+            margin-top: 10px;
+            border: #ecec37 3px solid;
+        }
+    </style>
+</head>
+<body>
+
+<div></div>
+
+<script>
+
+    const json = localStorage.getItem('sessions');
+    const sessions = json ? JSON.parse(json) : [];
+    for (const session of sessions) {
+        const wrapper = document.createElement('div');
+        const date = document.createElement('div');
+        const time = document.createElement('div');
+        wrapper.classList.add('wrapper','item');
+        const dateObj = format(session.date);
+        date.innerText = `Time: ${dateObj.HH}:${dateObj.MN}:${dateObj.SS}`;
+        time.innerText = `Date: ${dateObj.DD}/${dateObj.MM}/${dateObj.YYYY}`;
+
+        wrapper.append(date,time);
+        document.body.appendChild(wrapper);
+    }
+    function format(dateSrting){
+        const YYYY = new Date(dateSrting).getFullYear().toString();
+        const MM = (new Date(dateSrting).getMonth()+1).toString();
+        const DD = new Date(dateSrting).getDate().toString();
+        const HH = new Date(dateSrting).getHours().toString();
+        const MN = new Date(dateSrting).getMinutes().toString();
+        const SS = new Date(dateSrting).getSeconds().toString();
+        return{
+            YYYY: YYYY,
+            MM: MM,
+            DD: DD,
+            HH: HH,
+            MN: MN,
+            SS: SS,
+        }
+
+
+
+    }
+</script>
+
+</body>
+</html>
